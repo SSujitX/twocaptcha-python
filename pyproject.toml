@@ -1,5 +1,5 @@
 [project]
-name = "TwoCaptcha"
+name = "twocaptcha-python"
 version = "0.0.3"
 description = "Python client for 2captcha solving service - Bypass reCAPTCHA, Cloudflare Turnstile, FunCaptcha, GeeTest and solve any other captchas"
 readme = "README.md"
