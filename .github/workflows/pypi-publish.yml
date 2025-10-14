@@ -42,6 +42,9 @@ jobs:
 
       # Step 6: Publish the package to PyPI using API token
       - name: Publish package to PyPI
-        uses: pypa/gh-action-pypi-publish@v1.13.0
-        with:
-          token: ${{ secrets.PYPI_API_TOKEN }}
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+        run: |
+          pip install twine
+          twine upload dist/*
