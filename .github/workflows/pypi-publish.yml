@@ -11,7 +11,6 @@ on:
 
 permissions:
   contents: read # Required to read repository contents
-  id-token: write # Required for trusted publishing with OIDC
 
 jobs:
   deploy:
@@ -41,7 +40,7 @@ jobs:
       - name: Build package
         run: uv build
 
-      # Step 6: Publish the package to PyPI using trusted publishing
+      # Step 6: Publish the package to PyPI using API token
       - name: Publish package to PyPI
         uses: pypa/gh-action-pypi-publish@v1.13.0
         with:
