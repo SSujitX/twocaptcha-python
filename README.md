@@ -1,6 +1,6 @@
 # TwoCaptcha Python Library
 
-A simple Python client for the [TwoCaptcha API](https://2captcha.com/api-docs).
+A simple Python client for the [2captcha solving service](https://2captcha.com/api-docs) - Bypass reCAPTCHA, Cloudflare Turnstile, FunCaptcha, GeeTest and solve any other captchas.
 
 ## Installation
 
@@ -8,23 +8,8 @@ A simple Python client for the [TwoCaptcha API](https://2captcha.com/api-docs).
 pip install twocaptcha-python
 ```
 
-## Quick Start
-
-```python
-from twocaptcha import TwoCaptcha
-
-client = TwoCaptcha(api_key="YOUR_API_KEY")
-
-# Solve reCAPTCHA v2
-task = {
-    "type": "RecaptchaV2TaskProxyless",
-    "websiteURL": "https://example.com",
-    "websiteKey": "6LfD3PIbAAAAAJs_eEHvoOl75_83eXSqpPSRFJ_u"
-}
-
-result = client.solve_captcha(task)
-# balance = client.balance()
-print(result['solution']['gRecaptchaResponse'])
+```bash
+uv add twocaptcha-python
 ```
 
 **Note**: You can use any task configuration directly from the [2Captcha API documentation](https://2captcha.com/api-docs). Just copy the task object from their examples and pass it to `solve_captcha()`.
@@ -64,7 +49,7 @@ print(result['solution']['gRecaptchaResponse'])
 ### Synchronous Client
 
 ```python
-from twocaptcha import SyncTwoCaptcha, TwoCaptchaError
+from TwoCaptcha import SyncTwoCaptcha, TwoCaptchaError
 
 client = SyncTwoCaptcha(api_key="YOUR_API_KEY")
 
@@ -111,7 +96,7 @@ manual_solve_captcha()
 ### Asynchronous Client
 
 ```python
-from twocaptcha import AsyncTwoCaptcha, TwoCaptchaError
+from TwoCaptcha import AsyncTwoCaptcha, TwoCaptchaError
 import asyncio
 
 async def auto_solve_captcha():
