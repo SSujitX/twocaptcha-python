@@ -44,3 +44,5 @@ jobs:
       # Step 6: Publish the package to PyPI using trusted publishing
       - name: Publish package to PyPI
         uses: pypa/gh-action-pypi-publish@v1.13.0
+        with:
+          token: ${{ secrets.PYPI_API_TOKEN }}
