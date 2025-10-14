@@ -160,9 +160,9 @@ wheels = [
 ]
 
 [[package]]
-name = "twocaptcha-python"
-version = "0.0.2"
-source = { virtual = "." }
+name = "twocaptcha"
+version = "0.0.3"
+source = { editable = "." }
 dependencies = [
     { name = "httpx" },
     { name = "rich" },
