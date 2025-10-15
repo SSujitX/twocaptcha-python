@@ -5,9 +5,25 @@ build/
 dist/
 wheels/
 *.egg-info
+*.egg
 
 # Virtual environments
-.venv
+.venv/
+venv/
+env/
+ENV/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Project specific
 usages.txt
 example_async.py
 example_sync.py
