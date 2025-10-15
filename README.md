@@ -295,3 +295,7 @@ client = TwoCaptcha(
 ## Documentation
 
 For complete API documentation and task parameters, visit [2captcha.com/api-docs](https://2captcha.com/api-docs).
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=SSujitX/twocaptcha-python&type=date&legend=top-left)](https://www.star-history.com/#SSujitX/twocaptcha-python&type=date&legend=top-left)
