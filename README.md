@@ -346,3 +346,5 @@ For complete API documentation and task parameters, visit [2captcha.com/api-docs
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=SSujitX/twocaptcha-python&type=date&legend=top-left)](https://www.star-history.com/#SSujitX/twocaptcha-python&type=date&legend=top-left)
+
+![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FSSujitX%2Ftwocaptcha-python&countColor=%23263759&labelStyle=upper)
