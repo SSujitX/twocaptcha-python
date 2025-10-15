@@ -1,3 +1,9 @@
+[![PyPI version](https://badge.fury.io/py/twocaptcha-python.svg)](https://badge.fury.io/py/twocaptcha-python)
+[![Python Versions](https://img.shields.io/badge/python-3.9%20|%203.10%20|%203.11%20|%203.12%20|%203.13-blue)](https://pypi.org/project/twocaptcha-python/)
+[![Downloads](https://static.pepy.tech/badge/twocaptcha-python)](https://pepy.tech/project/twocaptcha-python)
+[![Downloads](https://static.pepy.tech/badge/twocaptcha-python/month)](https://pepy.tech/project/twocaptcha-python)
+[![Downloads](https://static.pepy.tech/badge/twocaptcha-python/week)](https://pepy.tech/project/twocaptcha-python)
+
 # TwoCaptcha Python Library
 
 A simple 2captcha Python client for the [2captcha solving service](https://2captcha.com/api-docs) - Bypass reCAPTCHA, Cloudflare Turnstile, FunCaptcha, GeeTest and solve any other captchas.
@@ -7,13 +13,13 @@ A simple 2captcha Python client for the [2captcha solving service](https://2capt
 - Using pip
 
 ```bash
-pip install twocaptcha-python
+pip install twocaptcha-python -U
 ```
 
 - Using uv
 
 ```bash
-uv add twocaptcha-python
+uv add twocaptcha-python -U
 ```
 
 **Note**: You can use any task configuration directly from the [2Captcha API documentation](https://2captcha.com/api-docs). Just copy the task object from their examples and pass it to `solve_captcha()`.
