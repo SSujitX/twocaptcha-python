@@ -9,3 +9,5 @@ wheels/
 # Virtual environments
 .venv
 usages.txt
+example_async.py
+example_sync.py
