@@ -1,12 +1,16 @@
 # TwoCaptcha Python Library
 
-A simple Python client for the [2captcha solving service](https://2captcha.com/api-docs) - Bypass reCAPTCHA, Cloudflare Turnstile, FunCaptcha, GeeTest and solve any other captchas.
+A simple 2captcha Python client for the [2captcha solving service](https://2captcha.com/api-docs) - Bypass reCAPTCHA, Cloudflare Turnstile, FunCaptcha, GeeTest and solve any other captchas.
 
 ## Installation
+
+- Using pip
 
 ```bash
 pip install twocaptcha-python
 ```
+
+- Using uv
 
 ```bash
 uv add twocaptcha-python
@@ -48,6 +52,8 @@ uv add twocaptcha-python
 
 ### Synchronous Client
 
+#### Auto solve captcha sync
+
 ```python
 from TwoCaptcha import SyncTwoCaptcha, TwoCaptchaError
 
@@ -68,8 +74,17 @@ def auto_solve_captcha():
 
     except TwoCaptchaError as e:
         print(f"TwoCaptcha Error: {e}")
+auto_solve_captcha()
+```
 
-def manual_solve_captcha():
+#### Manual solve captcha sync
+
+```python
+from TwoCaptcha import SyncTwoCaptcha, TwoCaptchaError
+
+client = SyncTwoCaptcha(api_key="YOUR_API_KEY")
+
+def manual_solve_captcha(task_id=None):
     """Manual solve captcha using 2captcha api."""
     try:
         task = {
@@ -88,12 +103,12 @@ def manual_solve_captcha():
     except TwoCaptchaError as e:
         print(f"TwoCaptcha Error: {e}")
 
-# Run examples
-auto_solve_captcha()
 manual_solve_captcha()
 ```
 
 ### Asynchronous Client
+
+#### Auto solve captcha Async
 
 ```python
 from TwoCaptcha import AsyncTwoCaptcha, TwoCaptchaError
@@ -118,6 +133,16 @@ async def auto_solve_captcha():
     finally:
         await client.close()
 
+if __name__ == "__main__":
+    asyncio.run(auto_solve_captcha())
+```
+
+#### Manual solve captcha Async
+
+```python
+from TwoCaptcha import AsyncTwoCaptcha, TwoCaptchaError
+import asyncio
+
 async def manual_solve_captcha():
     """Manual solve captcha using 2captcha api."""
     client = AsyncTwoCaptcha(api_key="YOUR_API_KEY")
@@ -140,11 +165,31 @@ async def manual_solve_captcha():
     finally:
         await client.close()
 
+if __name__ == "__main__":
+    asyncio.run(manual_solve_captcha())
+```
+
+#### Solve captcha using async context manager
+
+```python
+from TwoCaptcha import AsyncTwoCaptcha, TwoCaptchaError
+import asyncio
+
 async def context_manager_example():
     """Context manager example."""
     async with AsyncTwoCaptcha(api_key="YOUR_API_KEY") as client:
         balance = await client.balance()
         print(f"Context manager balance: {balance}")
+
+if __name__ == "__main__":
+    asyncio.run(context_manager_example())
+```
+
+#### Async multiple captcha solver
+
+```python
+from TwoCaptcha import AsyncTwoCaptcha, TwoCaptchaError
+import asyncio
 
 async def multiple_tasks_example():
     """Multiple tasks example."""
@@ -178,12 +223,8 @@ async def multiple_tasks_example():
         print(f"Error in multiple tasks: {e}")
     finally:
         await client.close()
-
-# Run examples
-asyncio.run(auto_solve_captcha())
-asyncio.run(manual_solve_captcha())
-asyncio.run(context_manager_example())
-asyncio.run(multiple_tasks_example())
+if __name__ == "__main__":
+    asyncio.run(multiple_tasks_example())
 ```
 
 ### Different Captcha Types
